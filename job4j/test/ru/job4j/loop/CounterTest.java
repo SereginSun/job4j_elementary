@@ -33,4 +33,25 @@ public class CounterTest {
         int result = count.sum(1, 2);
         assertEquals(3, result);
     }
+
+    @Test
+    public void whenFrom1To10ThenSumByEven30() {
+        Counter count = new Counter();
+        int result = count.sumByEven(1, 10);
+        assertEquals(30, result);
+    }
+
+    @Test
+    public void whenFrom1To3ThenSumByEven2() {
+        Counter count = new Counter();
+        int result = count.sumByEven(1, 3);
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void whenFrom14To20ThenSumByEven68() {
+        Counter count = new Counter();
+        int result = count.sumByEven(14, 20);
+        assertEquals(68, result);
+    }
 }
