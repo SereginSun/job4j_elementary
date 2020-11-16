@@ -7,8 +7,8 @@ public class ArrayLoop {
         for (int index = 0; index < numbers.length; index++) {
             numbers[index] = index * 2 + 3;
         }
-        for (int index = 0; index < numbers.length; index++) {
-            System.out.printf("In cell No.%s value %s%n", index, numbers[index]);
+        for (var number : numbers) {
+            System.out.printf("%s%n", number);
         }
     }
 }
