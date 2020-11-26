@@ -81,4 +81,130 @@ public class MatrixCheckTest {
         char[] expect = {'X', 'X', ' '};
         assertThat(result, is(expect));
     }
+
+    @Test
+    public void whenDataMonoByTrueThenTrue() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '}
+        };
+        boolean result = matrix.isWin(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenDataNotMonoByTrueThenFalse() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '}
+        };
+        boolean result = matrix.isWin(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void whenDataHMonoByTrueThenTrue() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = matrix.isWin(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenDataMonoMainDiagonalByTrueThenTrue() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', 'X'},
+                {' ', ' ', 'X', 'X', ' '},
+                {' ', ' ', 'X', ' ', 'X'},
+        };
+        boolean result = matrix.isWin(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenDataMonoMainDiagonalByTrueThenFalse() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', 'X'},
+        };
+        boolean result = matrix.isWin(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void whenMatrixHasMonoMainDiagonalByTrueThenTrue() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {'X', 'X', 'X', ' ', ' '},
+                {' ', ' ', ' ', 'X', ' '},
+                {' ', ' ', 'X', ' ', 'X'},
+        };
+        boolean result = matrix.monoMainDiagonal(input);
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenMatrixHasMonoMainDiagonalByTrueThenFalse() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {'X', 'X', 'X', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', 'X'},
+        };
+        boolean result = matrix.monoMainDiagonal(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void whenMatrixHasMonoNotMainDiagonalByTrueThenTrue() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {'X', ' ', ' ', ' ', 'X'},
+                {' ', 'X', ' ', 'X', ' '},
+                {'X', 'X', 'X', ' ', ' '},
+                {' ', 'X', ' ', 'X', ' '},
+                {'X', ' ', 'X', ' ', 'X'},
+        };
+        boolean result = matrix.monoNotMainDiagonal(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void whenMatrixHasMonoNotMainDiagonalByTrueThenFalse() {
+        MatrixCheck matrix = new MatrixCheck();
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', 'X', ' '},
+                {'X', 'X', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {'X', ' ', 'X', ' ', 'X'},
+        };
+        boolean result = matrix.monoNotMainDiagonal(input);
+        assertFalse(result);
+    }
 }
