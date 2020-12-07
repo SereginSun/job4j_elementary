@@ -11,7 +11,7 @@ public class PointTest {
         Point firstPoint = new Point(0, 0);
         Point secondPoint = new Point(2, 0);
         double excepted = 2.0;
-        double result = Point.distance(firstPoint, secondPoint);
+        double result = firstPoint.distance(secondPoint);
         assertEquals(excepted, result, 0.01);
     }
 
@@ -20,7 +20,7 @@ public class PointTest {
         Point firstPoint = new Point(1, 1);
         Point secondPoint = new Point(5, 4);
         double excepted = 5.0;
-        double result = Point.distance(firstPoint, secondPoint);
+        double result = firstPoint.distance(secondPoint);
         assertEquals(excepted, result, 0.01);
     }
 
@@ -29,7 +29,7 @@ public class PointTest {
         Point firstPoint = new Point(1, 0);
         Point secondPoint = new Point(3, 4);
         double excepted = 4.47;
-        double result = Point.distance(firstPoint, secondPoint);
+        double result = firstPoint.distance(secondPoint);
         assertEquals(excepted, result, 0.01);
     }
 }
